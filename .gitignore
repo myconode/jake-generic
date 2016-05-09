@@ -1,0 +1,12 @@
+.*
+!.gitignore
+
+/node_modules
+/lop
+/tmp
+/build
+/zip
+/public
+
+.log
+.zip

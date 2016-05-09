@@ -1,0 +1,18 @@
+{
+  "name": "jake-generic",
+  "version": "0.1.0",
+  "description": "A general-purpose Jakefile with sample app",
+  "main": "index.js",
+  "scripts": {
+    "jake": "jshint ; jake",
+    "test": "npm jake --test"
+  },
+  "author": "thelostspore <thelostspore> (https://github.com/thelostspore)",
+  "license": "MIT",
+  "devDependencies": {
+    "jake": "^8.0.12",
+    "jshint": "^2.9.2",
+    "mocha": "^2.4.5",
+    "chai": "^3.5.0"
+  }
+}
