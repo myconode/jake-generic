@@ -1,15 +1,17 @@
-'use strict';
+'use strict'
 
-// method registration
-const exports = {
+const fs = require('fs')
+const path = require('path')
+const spawnSync = require('child_process').spawnSync
+
+// method registration for function exports
+const utils = {
   "checkExec" : checkExec,
   "stdout" : stdout,
   "stderr" : stderr,
-  "json_parse" : json_parse,
-  "validateSourceJS" : validateSourceJS,
-  "validateScript" : validateScript,
-  "validateScripts" : validateScripts
+  "json_parse" : json_parse
 }
+
 
 
 // checkExec()
@@ -48,32 +50,4 @@ function json_parse(file){
 }
 
 
-function validateSourceJS(sourceCode, options, globals, description) {
-  description = description ? description + " " : ""
-  let pass = jshint(sourceCode, options, globals)
-  if (pass) { console.log(description + "ok") }
-  else {
-    console.log(description + "failed")
-    jshint.errors.forEach(function(error) {
-      console.log(error.line + ": " + error.evidence.trim())
-      console.log("   " + error.reason)
-    })
-  }
-
-  return pass
-}
-
-function validateScript(filename, options, globals) {
-  let sourceCode = fs.readFileSync(filename, "utf8")
-  return validateSourceJS(sourceCode, options, globals, filename)
-}
-
-function validateScripts(fileList, options, globals) {
-  let pass = true
-  fileList.forEach(function(filename) {
-    pass = validateScript(filename, options, globals) && pass
-  })
-  return pass
-}
-
-module.exports = exports
+module.exports = utils

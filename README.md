@@ -1,5 +1,5 @@
 # jake-generic
-A general-purpose Jakefile with sample app.
+A general-purpose Jakefile with sample app. WIP, unreleased.
 
 ## Technologies
 - `node` v4.2.4

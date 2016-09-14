@@ -4,6 +4,9 @@
 const fs = require('./jake/fs_ext.js')
 const path = require('path')
 
+// Jake Utilities
+const utils = require('./utils.js')
+
 // App config
 const app_config = require('./config.js')
 const app_dir  = fs.check( app_config.dir )

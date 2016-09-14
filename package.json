@@ -2,13 +2,18 @@
   "name": "jake-generic",
   "version": "0.1.0",
   "description": "A general-purpose Jakefile with sample app",
-  "main": "index.js",
+  "main": "utils.js",
+  "files" : ["utils.js"],
+  "author": "thelostspore <thelostspore@gmail.com>",  
+  "repository": {
+    "type": "git",
+    "url": "git@github.com:thelostspore/jake-generic"
+  },
   "scripts": {
     "default": "$(npm bin)/jshint ; $(npm bin)/jake",
     "jake": "npm run default",
     "test": "$(npm bin)/jake test"
   },
-  "author": "thelostspore <thelostspore> (https://github.com/thelostspore)",
   "license": "MIT",
   "devDependencies": {
     "jake": "^8.0.12",
