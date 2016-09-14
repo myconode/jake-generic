@@ -4,8 +4,9 @@
   "description": "A general-purpose Jakefile with sample app",
   "main": "index.js",
   "scripts": {
-    "jake": "jshint ; jake",
-    "test": "npm jake --test"
+    "default": "$(npm bin)/jshint ; $(npm bin)/jake",
+    "jake": "npm run default",
+    "test": "$(npm bin)/jake test"
   },
   "author": "thelostspore <thelostspore> (https://github.com/thelostspore)",
   "license": "MIT",
