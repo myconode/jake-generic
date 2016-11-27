@@ -26,3 +26,12 @@ cd jake-generic
 npm install
 jake
 ```
+
+### Testing
+[`mocha`][mocha] is used with [`chai`][chai] assertions. To run tests, simply:
+```
+jake test
+```
+
+[mocha]: https://mochajs.org/
+[chai]: http://chaijs.com/api/assert/ 
