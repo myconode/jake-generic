@@ -9,8 +9,10 @@ const utils = require('./utils.js')
 
 // App config
 const app_config = require('./config.js')
-const app_dir  = fs.check( app_config.dir )
-const spec_dir = fs.check( app_config.spec )
+// require func with custom errors???
+//
+// const app_dir  = fs.check( app_config.dir )
+// const spec_dir = fs.check( app_config.spec )
 
 
 // Tasks

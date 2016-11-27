@@ -28,11 +28,11 @@ fs.present = (_path)=>{
 fs.check = function(_path){
   try{
     let pcwd = process.cwd()
-    let test_path = path.join( pcwd, _path )
+    let test_path = path.join(pcwd, _path)
     fs.accessSync(test_path, fs.F_OK)
     return _path
   } catch(e) {
-    throw new ReferenceError(`${path} does not exist`)
+    throw new ReferenceError(`${_path} does not exist`)
   }
 }
 
