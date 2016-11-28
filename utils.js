@@ -12,15 +12,37 @@ const utils = {
   "json_parse" : json_parse
 }
 
+// checkExec()
+// check if a binary is available before usage
+//
+// @param { String } package name
+// @returns { String } path of the binary
+// @throws 
+function checkExec(bin=null) {
+  let result
 
+  if(bin){
+    result = spawnSync('command', [ '-v', bin]).status
+  }else{
+    throw new ReferenceError("No argument provided to checkNpmExec")
+    process.exit(1)
+  }
+
+  if (result !== 0){
+    throw new ReferenceError(`${bin} is not available on your system. 
+                             Please install the software on your workstation and try again.`)
+    process.exit(1)
+  }
+
+  return bin
+}
 
 // checkExec()
 // check if a binary is available before usage
 //
 // @param { String } bin - path to npm-installed binary
-// @param { String } software - name of software that's being checked
 // @returns { String } path of the binary
-function checkExec(bin) {
+function checkNpmExec(bin) {
   let software = path.basename(bin)
   let result = spawnSync("command", [ "-v", bin]).status
 
