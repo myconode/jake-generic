@@ -1,3 +1,5 @@
+[![devDependencies Status](https://david-dm.org/thelostspore/jake-generic/dev-status.svg)](https://david-dm.org/thelostspore/jake-generic?type=dev)
+
 # jake-generic
 A general-purpose Jakefile with sample app. WIP, unreleased. 
 
